@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#080d19">
-<meta name="description" content="Preview YouTube videos and access official viewing options with SnapTool. Fast, free and mobile friendly.">
+<meta name="description" content="Preview YouTube videos online with SnapTool. Fast, free and mobile friendly.">
 <title>SnapTool - Online Video Preview</title>
 
 <style>
@@ -34,11 +34,11 @@ justify-content:space-between;
 }
 .logo{font-size:25px;font-weight:800;letter-spacing:-1px}
 .logo span{color:var(--blue)}
-nav{display:flex;gap:20px;font-size:13px;color:var(--muted)}
+nav{display:flex;gap:18px;font-size:13px;color:var(--muted)}
 nav a:hover{color:white}
 .hero{
 text-align:center;
-padding:65px 18px 35px;
+padding:60px 18px 35px;
 max-width:850px;
 margin:auto;
 }
@@ -60,128 +60,87 @@ margin-bottom:17px;
 }
 h1 span{color:var(--blue)}
 .hero p{color:var(--muted);font-size:15px}
-.main{max-width:760px;margin:0 auto;padding:10px 18px 60px}
-.panel{
+.main{max-width:760px;margin:auto;padding:10px 18px 60px}
+.panel,.info{
 background:var(--card);
 border:1px solid var(--border);
-border-radius:17px;
+border-radius:16px;
 padding:22px;
-box-shadow:0 15px 45px #0005;
 }
-.panel h2{font-size:18px;margin-bottom:7px}
+.panel h2{font-size:19px;margin-bottom:6px}
 .small{color:var(--muted);font-size:13px}
-.input-wrap{
-display:flex;
-gap:9px;
-margin-top:18px;
-}
+.input-wrap{display:flex;gap:9px;margin-top:18px}
 input{
-width:100%;
-min-width:0;
+width:100%;min-width:0;
 background:#080f1d;
 border:1px solid #34445c;
 border-radius:10px;
-padding:15px;
-color:white;
-font-size:14px;
-outline:none;
+padding:15px;color:white;
+font-size:14px;outline:none;
 }
 input:focus{border-color:var(--blue)}
 button{
-border:0;
-border-radius:10px;
-background:var(--blue);
-color:white;
+border:0;border-radius:10px;
+background:var(--blue);color:white;
 padding:13px 19px;
-font-size:14px;
-font-weight:bold;
-cursor:pointer;
-white-space:nowrap;
+font-size:14px;font-weight:bold;
+cursor:pointer;white-space:nowrap;
 }
-button:hover{filter:brightness(1.12)}
-button:disabled{opacity:.5;cursor:not-allowed}
+button:disabled{opacity:.5;cursor:wait}
+.secondary{background:#1b2b43;border:1px solid #344c6e}
 .error{color:#ff8585;font-size:13px;margin-top:10px}
+.status{font-size:12px;margin-top:12px;color:var(--muted)}
+.status.online{color:#58d69a}
+.status.offline{color:#ff8585}
 #result{display:none;margin-top:22px}
 .video-image{
-width:100%;
-border-radius:12px;
-display:block;
-background:#080f1d;
-aspect-ratio:16/9;
-object-fit:cover;
+width:100%;border-radius:12px;
+display:block;aspect-ratio:16/9;
+object-fit:cover;background:#080f1d;
 }
 .video-title{font-size:18px;font-weight:bold;margin:15px 0 5px}
 .video-id{font-size:12px;color:var(--muted)}
 .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:17px}
-.secondary{
-background:#1b2b43;
-border:1px solid #344c6e;
-}
-.preview{
-margin-top:20px;
-display:none;
-}
+.preview{margin-top:20px;display:none}
 .preview iframe{
-width:100%;
-aspect-ratio:16/9;
-border:0;
-border-radius:12px;
+width:100%;aspect-ratio:16/9;
+border:0;border-radius:12px;
 }
 .notice{
-margin-top:16px;
-padding:13px;
-background:#17253a;
-border:1px solid #2b4568;
-border-radius:10px;
-color:#bdcde2;
-font-size:12px;
+margin-top:16px;padding:14px;
+background:#17253a;border:1px solid #2b4568;
+border-radius:10px;color:#bdcde2;font-size:12px;
 }
-.section{margin-top:25px}
+.section{margin-top:28px}
 .features{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-margin-top:17px;
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:12px;margin-top:17px;
 }
 .feature{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:12px;
-padding:17px 12px;
-text-align:center;
+background:var(--card);border:1px solid var(--border);
+border-radius:12px;padding:17px 12px;text-align:center;
 }
 .feature .emoji{font-size:24px;margin-bottom:7px}
 .feature h3{font-size:13px}
 .feature p{font-size:11px;color:var(--muted);margin-top:4px}
-.info{
-margin-top:30px;
-background:var(--card);
-border:1px solid var(--border);
-padding:22px;
-border-radius:14px;
-}
+.info{margin-top:22px}
 .info h2{font-size:19px;margin-bottom:9px}
 .info p{font-size:13px;color:var(--muted);margin-bottom:10px}
 footer{
 border-top:1px solid var(--border);
-padding:30px 15px;
-text-align:center;
-color:var(--muted);
-font-size:12px;
+padding:30px 15px;text-align:center;
+color:var(--muted);font-size:12px;
 }
 .footer-links{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:18px;
-margin-bottom:12px;
+display:flex;justify-content:center;
+flex-wrap:wrap;gap:18px;margin-bottom:12px;
 }
 footer a:hover{color:white}
 @media(max-width:550px){
 header{padding:15px}
 nav{gap:10px;font-size:11px}
-.hero{padding-top:48px}
-.panel{padding:17px}
+.hero{padding-top:45px}
+.panel,.info{padding:17px}
 .input-wrap{flex-direction:column}
 .input-wrap button{width:100%}
 .features{grid-template-columns:1fr}
@@ -218,15 +177,16 @@ nav{gap:10px;font-size:11px}
 <input id="videoUrl" type="url"
 placeholder="Paste YouTube link here..."
 autocomplete="off">
-<button id="previewBtn" onclick="getVideo()">Preview Video</button>
+<button id="previewBtn" onclick="getVideo()">Get Video</button>
 </div>
 
 <div id="error" class="error"></div>
+<div id="apiStatus" class="status">Checking backend connection...</div>
 
 <div id="result">
-<img id="thumbnail" class="video-image" alt="YouTube video thumbnail">
+<img id="thumbnail" class="video-image" alt="YouTube thumbnail">
 
-<div class="video-title" id="videoTitle">YouTube Video Preview</div>
+<div class="video-title" id="videoTitle">Video Preview</div>
 <div class="video-id" id="videoId"></div>
 
 <div class="actions">
@@ -241,9 +201,9 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 allowfullscreen></iframe>
 </div>
 
-<div class="notice">
-<strong>Official download options</strong><br>
-YouTube may offer offline downloads through its official app for eligible videos and accounts. Use the official YouTube app to check availability.
+<div class="notice" id="downloadInfo">
+<strong>Download availability</strong><br>
+Checking official options...
 </div>
 </div>
 </section>
@@ -268,26 +228,27 @@ YouTube may offer offline downloads through its official app for eligible videos
 
 <section class="info" id="about">
 <h2>About SnapTool</h2>
-<p>SnapTool is an online video preview utility. It helps visitors quickly open and preview public YouTube videos through the official YouTube player.</p>
-<p>SnapTool is an independent project and is not affiliated with, endorsed by, or sponsored by YouTube or Google.</p>
+<p>SnapTool is an independent online video preview utility. It helps visitors preview public YouTube videos through the official YouTube player.</p>
+<p>SnapTool is not affiliated with or endorsed by YouTube or Google.</p>
 </section>
 
 <section class="info" id="privacy">
 <h2>Privacy Policy</h2>
-<p>This initial version does not require registration. Video links are processed in your browser to display the preview. The website does not intentionally store submitted video links.</p>
-<p>Third-party services, including YouTube, may collect information according to their own privacy policies.</p>
+<p>This website does not require registration. Submitted video IDs are sent to our backend to retrieve preview information. We do not intentionally store submitted video links.</p>
+<p>YouTube and other third-party services may collect information according to their own privacy policies.</p>
 </section>
 
 <section class="info" id="terms">
 <h2>Terms of Use</h2>
-<p>By using this website, you agree to use it lawfully and respect the rights of video owners and applicable platform terms.</p>
+<p>Use this website lawfully and respect video owners' rights and applicable platform terms.</p>
 <p>SnapTool does not host or provide unauthorized copies of YouTube videos.</p>
 </section>
 
 <section class="info" id="contact">
 <h2>Contact Us</h2>
-<p>For questions, feedback or support, contact: <a href="mailto:YOUR_EMAIL@example.com" style="color:#70aaff">YOUR_EMAIL@example.com</a></p>
-<p>Replace this placeholder with your real contact email before publishing.</p>
+<p>For support, feedback or questions, contact:</p>
+<p><a href="mailto:YOUR_EMAIL@example.com" style="color:#70aaff">YOUR_EMAIL@example.com</a></p>
+<p>Replace this placeholder with your actual email address.</p>
 </section>
 
 </main>
@@ -305,10 +266,16 @@ YouTube may offer offline downloads through its official app for eligible videos
 </footer>
 
 <script>
+const API = "https://snaptool-api.janeen36m.workers.dev";
+
 const input = document.getElementById("videoUrl");
 const result = document.getElementById("result");
-const error = document.getElementById("error");
+const errorBox = document.getElementById("error");
+const statusBox = document.getElementById("apiStatus");
+const previewBtn = document.getElementById("previewBtn");
+
 let currentVideoId = "";
+let currentYoutubeUrl = "";
 
 function extractVideoId(url) {
   try {
@@ -341,8 +308,25 @@ function extractVideoId(url) {
   }
 }
 
-function getVideo() {
-  error.textContent = "";
+async function checkBackend() {
+  try {
+    const response = await fetch(API + "/api/health");
+    if (!response.ok) throw new Error("Backend unavailable");
+
+    const data = await response.json();
+
+    if (!data.success) throw new Error("API check failed");
+
+    statusBox.textContent = "● Backend connected";
+    statusBox.className = "status online";
+  } catch (error) {
+    statusBox.textContent = "● Backend connection failed";
+    statusBox.className = "status offline";
+  }
+}
+
+async function getVideo() {
+  errorBox.textContent = "";
   result.style.display = "none";
   document.getElementById("player").style.display = "none";
   document.getElementById("youtubePlayer").src = "";
@@ -350,34 +334,65 @@ function getVideo() {
   const url = input.value.trim();
 
   if (!url) {
-    error.textContent = "Please paste a YouTube URL first.";
+    errorBox.textContent = "Please paste a YouTube URL.";
     return;
   }
 
   const id = extractVideoId(url);
 
   if (!id || !/^[a-zA-Z0-9_-]{11}$/.test(id)) {
-    error.textContent = "Please enter a valid YouTube video, Shorts or live link.";
+    errorBox.textContent = "Please enter a valid YouTube video or Shorts link.";
     return;
   }
 
-  currentVideoId = id;
+  previewBtn.disabled = true;
+  previewBtn.textContent = "Loading...";
 
-  document.getElementById("thumbnail").src =
-    "https://i.ytimg.com/vi/" + id + "/hqdefault.jpg";
+  try {
+    const response = await fetch(API + "/api/preview", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        videoId: id
+      })
+    });
 
-  document.getElementById("thumbnail").onerror = function() {
-    this.alt = "Thumbnail unavailable. You can still open the video on YouTube.";
-  };
+    const data = await response.json();
 
-  document.getElementById("videoTitle").textContent =
-    "YouTube Video Preview";
+    if (!response.ok || !data.success) {
+      throw new Error(data.error || "Unable to process video.");
+    }
 
-  document.getElementById("videoId").textContent =
-    "Video ID: " + id;
+    currentVideoId = data.videoId;
+    currentYoutubeUrl = data.youtube;
 
-  result.style.display = "block";
-  result.scrollIntoView({behavior:"smooth",block:"nearest"});
+    document.getElementById("thumbnail").src = data.thumbnail;
+    document.getElementById("videoTitle").textContent =
+      "YouTube Video Preview";
+
+    document.getElementById("videoId").textContent =
+      "Video ID: " + data.videoId;
+
+    document.getElementById("downloadInfo").innerHTML =
+      "<strong>Official download options</strong><br>" +
+      data.downloads.message +
+      "<br><br>Open the video in YouTube to check whether offline viewing is available for your account.";
+
+    result.style.display = "block";
+    result.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+
+  } catch (err) {
+    errorBox.textContent =
+      err.message || "Something went wrong. Please try again.";
+  } finally {
+    previewBtn.disabled = false;
+    previewBtn.textContent = "Get Video";
+  }
 }
 
 function playVideo() {
@@ -391,14 +406,18 @@ function playVideo() {
     currentVideoId + "?autoplay=1";
 
   player.style.display = "block";
-  player.scrollIntoView({behavior:"smooth",block:"center"});
+
+  player.scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
 }
 
 function openYoutube() {
-  if (!currentVideoId) return;
+  if (!currentYoutubeUrl) return;
 
   window.open(
-    "https://www.youtube.com/watch?v=" + currentVideoId,
+    currentYoutubeUrl,
     "_blank",
     "noopener,noreferrer"
   );
@@ -410,6 +429,8 @@ input.addEventListener("keydown", function(event) {
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
+
+checkBackend();
 </script>
 
 </body>
